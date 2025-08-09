@@ -1,34 +1,11 @@
--- SCHEMAS of Netflix
-
-DROP TABLE IF EXISTS netflix;
-CREATE TABLE netflix
-(
-	show_id	VARCHAR(5),
-	type    VARCHAR(10),
-	title	VARCHAR(250),
-	director VARCHAR(550),
-	casts	VARCHAR(1050),
-	country	VARCHAR(550),
-	date_added	VARCHAR(55),
-	release_year	INT,
-	rating	VARCHAR(15),
-	duration	VARCHAR(15),
-	listed_in	VARCHAR(250),
-	description VARCHAR(550)
-);
-
-SELECT * FROM netflix;
-	SELECT 
-	COUNT(*) total_content
-	FROM netflix;
-	-- 15 Bussiness Problems --
-	
-	-- 1. Count the number of Movies vs TV Shows
-	 select 
-	    type,
-		count(*) total_content
-	 from netflix
-	 group by type
+-- Netflix Data Analysis using SQL
+-- Solutions of 15 business problems
+-- 1. Count the number of Movies vs TV Shows-- SCHEMAS of Netflix
+	 SELECT 
+	type,
+	COUNT(*)
+FROM netflix
+GROUP BY 1
 	
 	
   -- 2. Find the most common rating for movies and TV shows
